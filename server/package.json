@@ -1,0 +1,16 @@
+{
+  "name": "pern-starter-boilerplate",
+  "version": "1.0.0",
+  "description": "PERN starter boilerplate with authentication",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "node index.js",
+    "start:dev:watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rampratts",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

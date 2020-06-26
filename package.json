@@ -1,0 +1,23 @@
+{
+  "name": "pern-starter-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev:server": "cd server && npm run start:dev",
+    "start:dev:server:watch": "cd server && npm run start:dev:watch",
+    "start:dev:client": "cd client && npm run start",
+    "start:dev": "concurrently --kill-others-on-fail \"npm run start:dev:server:watch\" \"npm run start:dev:client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rampratts/pern-starter-boilerplate.git"
+  },
+  "author": "rampratts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rampratts/pern-starter-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rampratts/pern-starter-boilerplate#readme"
+}
