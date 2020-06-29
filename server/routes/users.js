@@ -65,8 +65,13 @@ router.post('/login',
 
 });
 
-router.get('/secret', auth, (req, res) => {
-    res.send(req.user);
+router.delete('/', auth, async (req, res) => {
+    try {
+        const response = await pool.query('DELETE FROM users WHERE id = $1', [req.user.id]);
+        res.send({'result': 'User deleted'});
+    } catch (error) {
+        res.status(400).send(error)
+    }
 });
 
 module.exports = router;
