@@ -1,0 +1,5 @@
+PGUSER=database_user 
+PGHOST=database_host
+PGPASSWORD=database_password
+PGDATABASE=database_name 
+PGPORT=database_port
