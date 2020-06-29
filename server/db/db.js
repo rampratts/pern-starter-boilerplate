@@ -2,13 +2,8 @@ const { Pool, Client } = require('pg');
 
 const pool = new Pool();
 
-pool.query('SELECT NOW()', (err, res) => {
-    if(err) {
-        console.log('Error while connecting to database: ',err);
-    } else {
-        console.log('Connection to database established');
-    }
-    pool.end()
-})
+pool.query('SELECT NOW()').then(res => {
+    console.log('Connected to database');
+}).catch(err => console.log(err));
 
 module.exports = pool;

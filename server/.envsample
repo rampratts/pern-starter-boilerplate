@@ -3,3 +3,4 @@ PGHOST=database_host
 PGPASSWORD=database_password
 PGDATABASE=database_name 
 PGPORT=database_port
+JWT_SECRET=secret_key

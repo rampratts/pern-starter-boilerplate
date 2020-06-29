@@ -1,8 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const pool = require('./db/db');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/api/users', require('./routes/users'));
 
 app.listen(port, () => console.log('Server started 🚀'));
