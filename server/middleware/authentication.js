@@ -12,8 +12,8 @@ const auth = (req, res, next) => {
 
         req.user = verifiedToken;
         next();
-    } catch (error) {
-        res.status(400).send(error);
+    } catch (e) {
+        res.status(401).send({error: 'not auth'});
     }
 }
 

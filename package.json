@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/rampratts/pern-starter-boilerplate/issues"
   },
-  "homepage": "https://github.com/rampratts/pern-starter-boilerplate#readme"
+  "homepage": "https://github.com/rampratts/pern-starter-boilerplate#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
 }

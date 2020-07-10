@@ -74,4 +74,16 @@ router.delete('/', auth, async (req, res) => {
     }
 });
 
+router.post('/verifyToken', auth, (req, res) => { 
+    try {
+        res.json({
+            auth: true,
+            username: req.user.username
+        })
+    } catch(error) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+})
+
 module.exports = router;
