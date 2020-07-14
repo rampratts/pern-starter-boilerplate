@@ -13,7 +13,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLogged, setIsLogged] = useContext(UserContext);
 
-  const loadApp = async () => {
+  const loadApp = () => {
     verifyAuthentication().then(userInfo => {
       setIsLogged(userInfo.auth)
       setIsLoaded(true);
