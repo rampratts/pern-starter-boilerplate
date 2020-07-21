@@ -14,24 +14,37 @@ function Nav() {
     }
 
     return (
-        <div>
-            <ul>
-                <li onClick={() => history.push('/')}>Home</li>
-                {
-                    isLogged ? (
-                        <React.Fragment>
-                            <li onClick={() => history.push('/secret')}>Secret</li>
-                            <li onClick={logout}>Logout</li>
-                        </React.Fragment>
-                    ) : (
-                        <React.Fragment>
-                            <li onClick={() => history.push('/login')}>Login</li>
-                            <li onClick={() => history.push('/register')}>Register</li>
-                        </React.Fragment>
-                    )
-                }
-            </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">PERN Starter</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" onClick={() => history.push('/')}>
+                      <a class="nav-link" href="#">Home</a> 
+                    </li>
+                    {
+                        isLogged ? (
+                            <React.Fragment>
+                                <li class="nav-item" onClick={() => history.push('/secret')}>
+                                    <a class="nav-link" href="#">Secret</a> 
+                                </li>
+                                <li class="nav-item" onClick={logout}>
+                                    <a class="nav-link">Logout</a> 
+                                </li>
+                            </React.Fragment>
+                        ) : (
+                            <React.Fragment>
+                                <li class="nav-item" onClick={() => history.push('/login')}>
+                                    <a class="nav-link">Login</a> 
+                                </li>
+                                <li class="nav-item" onClick={() => history.push('/register')}>
+                                    <a class="nav-link">Register</a> 
+                                </li>
+                            </React.Fragment>
+                        )
+                    }
+                </ul>
+            </div>
+        </nav>
     )
 }
 

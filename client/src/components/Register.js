@@ -6,7 +6,8 @@ function Register({history}) {
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState({show: false, message: ''});
 
-    const registerUser = async () => {
+    const registerUser = async (e) => {
+        e.preventDefault();
         setShowError({show: false, message: ''});
 
         if(!username) return setShowError({show: true, message: 'Invalid username'});
@@ -36,14 +37,25 @@ function Register({history}) {
     }
 
     return (
-        <div>
-            <h1>Register page</h1>
-            <p>Here you can register a new account (don't use your real data!)</p>
-            <input placeholder='username' value={username} onChange={e => setUsername(e.target.value)} />
-            <input placeholder='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
-            <input placeholder='password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
-            <button onClick={registerUser}>Register</button>
-            {showError.show ? (<p>{showError.message}</p>) : (<React.Fragment></React.Fragment>)}
+        <div class='container'>
+            <form class='col-4'>
+                <h1>Register page</h1>
+                <p>Here you can register a new account</p>
+                <div class='form-group'>
+                    <label for="username">Username</label>
+                    <input class='form-control' id='username' placeholder='username' value={username} onChange={e => setUsername(e.target.value)} />
+                </div>
+                <div class='form-group'>
+                    <label for="email">Email</label>
+                    <input class='form-control' id='email' placeholder='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                </div>
+                <div class='form-group'>
+                    <label for="password">Password</label>
+                    <input class='form-control' placeholder='password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
+                </div>
+                <button class='btn btn-success' onClick={registerUser}>Register</button>
+                {showError.show ? (<p class='text-danger'>{showError.message}</p>) : (<React.Fragment></React.Fragment>)}
+            </form>
         </div>
     )
 }

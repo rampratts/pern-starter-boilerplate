@@ -25,10 +25,11 @@ function Secret() {
     }
     
     return (
-        <div>
+        <div class='container'>
             <h1>Psst, only authenticated users can see this 🤫</h1>
             <p>This is a secured route. Only users previously registered and logged in can access this.</p>
-            <button onClick={deleteAccount}>Delete my account</button>
+            <p>Also, feel free to delete your data!</p>
+            <button class='btn btn-danger' onClick={deleteAccount}>Delete my account</button>
         </div>
     )
 }
